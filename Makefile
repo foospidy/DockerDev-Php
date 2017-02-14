@@ -2,4 +2,5 @@ build:
 	docker build -t php-dev .
 
 run:
-	docker run -i -v $$HOME/tmp/Php/:/Php/ -t php-dev /bin/bash
+	# Starting DockerDev-Php
+	@docker run -i -v $$HOME/tmp/Php/:/Php/ -t php-dev /bin/bash
