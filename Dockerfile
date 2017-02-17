@@ -8,4 +8,6 @@ COPY composer.sh /tmp/composer.sh
 RUN cd /tmp && ./composer.sh
 RUN mv /tmp/composer.phar /usr/local/bin/composer && rm /tmp/composer.*
 
+EXPOSE 80
+
 WORKDIR /Php
