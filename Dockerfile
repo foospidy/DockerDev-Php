@@ -9,7 +9,8 @@ RUN cd /tmp && ./composer.sh
 RUN mv /tmp/composer.phar /usr/local/bin/composer && rm /tmp/composer.*
 
 RUN a2enmod rewrite && \
-    echo "ServerName foo" >> /etc/apache2/apache2.conf
+    echo "ServerName foo" >> /etc/apache2/apache2.conf && \
+    sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
 EXPOSE 80
 
