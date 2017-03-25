@@ -8,7 +8,8 @@ COPY composer.sh /tmp/composer.sh
 RUN cd /tmp && ./composer.sh
 RUN mv /tmp/composer.phar /usr/local/bin/composer && rm /tmp/composer.*
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite && \
+    echo "ServerName foo" >> /etc/apache2/apache2.conf
 
 EXPOSE 80
 
